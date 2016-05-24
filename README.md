@@ -1,12 +1,16 @@
 # counsel-dash
 
+[![Melpa Status](http://melpa.milkbox.net/packages/counsel-dash-badge.svg)](http://melpa.milkbox.net/#/counsel-dash)
+
 Browse [Dash](http://www.kapeli.com/dash) docsets using [Ivy](https://github.com/abo-abo/swiper).
 
 ## Installation
 
 ### MELPA
 
-[Pending.](https://github.com/melpa/melpa/pull/3924)
+```
+M-x package-install RET counsel-dash RET
+```
 
 ### Source
 
