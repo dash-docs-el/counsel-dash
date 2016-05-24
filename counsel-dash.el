@@ -89,8 +89,7 @@ INITIAL will be used as the initial input, if given."
     :history 'counsel-dash-history-input
     :initial-input initial
     :action (lambda (s)
-              (-when-let
-                (result (-compose (-partial '-drop 1) '-first (-partial 'string= s) 'car counsel-dash--results))
+              (-when-let (result (-drop 1 (-first (-compose (-partial 'string= s) 'car) counsel-dash--results)))
                 (helm-dash-browse-url result)))))
 
 (provide 'counsel-dash)
