@@ -6,7 +6,7 @@ Browse [Dash](http://www.kapeli.com/dash) docsets using [Ivy](https://github.com
 
 ### MELPA
 
-Pending.
+[Pending.](https://github.com/melpa/melpa/pull/3924)
 
 ### Source
 
