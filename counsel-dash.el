@@ -3,7 +3,7 @@
 ;; Copyright (C) 2016 Nathan Kot
 
 ;; Author: Nathan Kot <nk@nathankot.com>
-;; Version: 0.1.1
+;; Version: 0.1.3
 ;; Package-Requires: ((emacs "24.4") (dash "2.12.1") (dash-functional "1.2.0") (helm-dash "1.3.0") (counsel "0.8.0"))
 ;; Keywords: dash, ivy, counsel
 ;; URL: https://github.com/nathankot/counsel-dash
