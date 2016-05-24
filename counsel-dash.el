@@ -49,23 +49,13 @@
 (defvar counsel-dash--results nil
   "Stores the previously retrieved docset results.")
 
-;;;###autoload
-(defun counsel-dash-activate-local-docset (docset)
-  "Use the given DOCSET when searching through dash in the current buffer."
-  (interactive (list (helm-dash-read-docset
-                       "Activate docset"
-                       (helm-dash-installed-docsets))))
-  (unless (boundp 'helm-dash-docsets) (setq-local helm-dash-docsets '()))
-  (add-to-list 'helm-dash-docsets docset)
-  (helm-dash-reset-connections))
+(defvar-local counsel-dash-docsets nil
+  "Docsets to use for this buffer.")
 
-;;;###autoload
-(defun counsel-dash-deactivate-local-docset (docset)
-  "Remove the given DOCSET when searching through dash in the current buffer."
-  (interactive (list (helm-dash-read-docset
-                       "Deactivate docset"
-                       (helm-dash-installed-docsets))))
-  (setq-local helm-dash-docsets (delete docset helm-dash-docsets)))
+(advice-add #'helm-dash-buffer-local-docsets :around
+  (lambda (old-fun &rest args)
+    (let ((old (apply old-fun args)))
+      (-union old counsel-dash-docsets))))
 
 (defun counsel-dash-collection (s &rest _)
   "Given a string S, query docsets and retrieve result."
