@@ -51,7 +51,7 @@
 
 ;;;###autoload
 (defun counsel-dash-activate-local-docset (docset)
-  "Use the given list of DOCSETS when searching through dash in the current buffer."
+  "Use the given DOCSET when searching through dash in the current buffer."
   (interactive (list (helm-dash-read-docset
                        "Activate docset"
                        (helm-dash-installed-docsets))))
@@ -61,7 +61,7 @@
 
 ;;;###autoload
 (defun counsel-dash-deactivate-local-docset (docset)
-  "Use the given list of DOCSETS when searching through dash in the current buffer."
+  "Remove the given DOCSET when searching through dash in the current buffer."
   (interactive (list (helm-dash-read-docset
                        "Deactivate docset"
                        (helm-dash-installed-docsets))))
