@@ -70,10 +70,9 @@
 (defun counsel-dash-collection (s &rest _)
   "Given a string S, query docsets and retrieve result."
   (when (>= (length s) 3)
-    (let* ( (helm-pattern s)
-            (results (helm-dash-search)) )
-      (setq counsel-dash--results results)
-      (mapcar 'car results))))
+    (setq helm-pattern s)
+    (setq counsel-dash--results (helm-dash-search))
+    (mapcar 'car counsel-dash--results)))
 
 ;;;###autoload
 (defun counsel-dash (&optional initial)
