@@ -72,14 +72,15 @@ INITIAL will be used as the initial input, if given."
   (helm-dash-initialize-debugging-buffer)
   (helm-dash-create-buffer-connections)
   (helm-dash-create-common-connections)
-  (ivy-read "Documentation for: "
-    'counsel-dash-collection
+  (let ((cb (current-buffer)))
+   (ivy-read "Documentation for: "
+    #'(lambda (s &rest _) (with-current-buffer cb (counsel-dash-collection s)))
     :dynamic-collection t
     :history 'counsel-dash-history-input
     :initial-input initial
     :action (lambda (s)
               (-when-let (result (-drop 1 (-first (-compose (-partial 'string= s) 'car) counsel-dash--results)))
-                (helm-dash-browse-url result)))))
+                (helm-dash-browse-url result))))))
 
 (provide 'counsel-dash)
 ;;; counsel-dash.el ends here
