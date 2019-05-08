@@ -55,7 +55,7 @@
 (advice-add #'dash-docs-buffer-local-docsets :around
             (lambda (old-fun &rest args)
               (let ((old (apply old-fun args)))
-                (-union old counsel-dash-docsets))))
+                (remove-duplicates (append old counsel-dash-docsets)))))
 
 (defun counsel-dash--collection (s &rest _)
   "Given a string S, query docsets and retrieve result."
