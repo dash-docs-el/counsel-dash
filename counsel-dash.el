@@ -64,9 +64,9 @@
 
 (defun counsel-dash--browse-matching-result (match)
   "Given a MATCH, find matching result and browse it's url."
-  (when-let (result
-             (cdr (cl-find-if (lambda (e)
-                                (string= match (car e))) counsel-dash--results)))
+  (when-let ((result
+              (cdr (cl-find-if (lambda (e)
+                                 (string= match (car e))) counsel-dash--results))))
     (dash-docs-browse-url result)))
 
 
