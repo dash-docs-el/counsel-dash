@@ -17,7 +17,9 @@
 ;;; Code:
 
 (require 'cl-lib)
+(require 'subr-x)
 (require 'dash-docs)
+(require 'ivy)
 
 (defgroup counsel-dash nil
   "Search Dash docsets using ivy"
