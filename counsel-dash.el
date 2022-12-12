@@ -27,7 +27,7 @@
   :group 'ivy)
 
 ; Aliases are used so that we can provide a common interface, irrespective of
-; any library changes in the future (e.g if helm-dash de-couples itself into two libraries.)
+; any library changes in the future.
 
 (defvaralias 'counsel-dash-docsets-path 'dash-docs-docsets-path)
 (defvaralias 'counsel-dash-docsets-url 'dash-docs-docsets-url)
