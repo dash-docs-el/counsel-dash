@@ -20,11 +20,6 @@ Make sure `counsel-dash.el` is in your `load-path` and then:
 (require 'counsel-dash)
 ```
 
-## How it works
-
-This is a simple wrapper around [helm-dash](https://github.com/areina/helm-dash/), of which you should check out for
-implementation details.
-
 ## Configuration
 
 You'll find most of the available functions and configuration variables are
